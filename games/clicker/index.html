@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Speed | RevoFun</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        #chat-area::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        #chat-area::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 10px;
+        }
+
+        /* Animasi Tombol Utama */
+        #click-btn:active {
+            transform: scale(0.95);
+        }
+
+        .click-pulse {
+            animation: pulse-click 0.3s ease-out;
+        }
+
+        @keyframes pulse-click {
+            0% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+            }
+
+            100% {
+                box-shadow: 0 0 0 20px rgba(59, 130, 246, 0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-[#0f172a] text-slate-200 min-h-screen flex flex-col selection:bg-blue-500/30">
+
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-900/20 blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-900/20 blur-[120px]">
+        </div>
+    </div>
+
+    <div id="name-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center z-50">
+        <div class="glass-card p-8 rounded-3xl shadow-2xl w-[380px] max-w-[90%]">
+            <h2 class="text-2xl font-bold mb-2 text-center text-white">Siap Menekan?</h2>
+            <p class="text-slate-400 text-sm text-center mb-8">Uji kecepatan jarimu dalam 10 detik!</p>
+            <div class="space-y-5">
+                <input type="text" id="player-name"
+                    class="w-full bg-slate-900/50 border border-slate-700 px-4 py-3 rounded-xl text-white outline-none focus:ring-2 focus:ring-blue-500/50"
+                    placeholder="Username..." />
+                <button id="start-game"
+                    class="w-full bg-blue-600 hover:bg-blue-500 text-white py-3.5 rounded-xl font-semibold shadow-lg transition-all active:scale-95">Akses
+                    Arena</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="flex-1 flex flex-col items-center justify-center p-4 sm:p-6">
+        <div class="max-w-4xl w-full">
+            <header class="text-center mb-10">
+                <span
+                    class="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-[10px] font-bold uppercase tracking-widest mb-3 border border-blue-500/20">Speed
+                    Challenge</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-3 text-white uppercase italic">CLICKER <span
+                        class="text-blue-500">SPEED</span></h1>
+            </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <div class="lg:col-span-7 flex flex-col gap-6">
+                    <div
+                        class="glass-card rounded-[2rem] p-10 flex flex-col items-center justify-center relative min-h-[400px]">
+                        <div class="absolute top-8 flex flex-col items-center">
+                            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Waktu
+                                Tersisa</span>
+                            <div id="timer-display" class="text-4xl font-black text-white italic">10.0s</div>
+                        </div>
+
+                        <button id="click-btn" disabled
+                            class="w-48 h-48 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-full flex items-center justify-center text-5xl border-8 border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.3)] transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+                            ⚡
+                        </button>
+
+                        <button id="btn-ready"
+                            class="mt-8 px-8 py-3 bg-white text-slate-900 rounded-xl font-bold hover:bg-slate-200 transition-all">SIAP?
+                            KLIK DI SINI</button>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="glass-card rounded-2xl p-5 border-l-4 border-l-blue-500">
+                            <p class="text-[10px] font-bold text-slate-500 uppercase mb-1">Klik Saat Ini</p>
+                            <div id="current-score" class="text-3xl font-black text-white italic">0</div>
+                        </div>
+                        <div class="glass-card rounded-2xl p-5 border-l-4 border-l-emerald-500">
+                            <p class="text-[10px] font-bold text-slate-500 uppercase mb-1">Terbaik Anda</p>
+                            <div id="high-score" class="text-3xl font-black text-white italic">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="glass-card rounded-[2rem] p-2 overflow-hidden flex flex-col h-[520px]">
+                        <div class="px-6 py-4 border-b border-slate-700/50 flex justify-between bg-slate-800/30">
+                            <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400">Battle Log</h2>
+                        </div>
+                        <div id="chat-area" class="flex-1 overflow-y-auto p-6 space-y-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="game-over-modal"
+        class="fixed inset-0 bg-slate-950/90 backdrop-blur-md flex items-center justify-center z-50 hidden p-4">
+        <div class="glass-card p-10 rounded-[2.5rem] shadow-2xl max-w-sm w-full text-center">
+            <h2 class="text-xl font-bold text-slate-400 uppercase tracking-widest mb-2">Waktu Habis!</h2>
+            <div id="final-score" class="text-7xl font-black text-white italic mb-6">0</div>
+            <p id="rank-message" class="text-blue-400 font-medium mb-8 text-sm italic"></p>
+            <div class="flex flex-col gap-3">
+                <button id="play-again"
+                    class="w-full bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-2xl font-bold transition-all">Coba
+                    Lagi</button>
+                <a href="../../index.html"
+                    class="text-slate-500 hover:text-white text-xs font-semibold tracking-widest py-2 uppercase transition-all">Keluar
+                    Arena</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="p-8 text-center">
+        <a href="/index.html"
+            class="text-slate-500 hover:text-blue-400 text-xs font-semibold tracking-widest transition-colors uppercase">&larr;
+            Exit Arena</a>
+    </footer>
+
+    <script src="/games/clicker/main.ts" type="module"></script>
+</body>
+
+</html>
