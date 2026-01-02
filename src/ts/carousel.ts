@@ -22,8 +22,8 @@ const GAMES: GameInfo[] = [
   },
   {
     id: "rps",
-    tag: "Rock, Paper, Scissors",
-    title: "Rock, Paper, Scissors",
+    tag: "RPS Arena",
+    title: "RPS Arena",
     desc: "Tantang komputer dalam permainan klasik suit.",
     meta: "Pilih batu, kertas, atau gunting dan lihat siapa pemenangnya.",
     image: "/img/game2.png",
@@ -31,8 +31,8 @@ const GAMES: GameInfo[] = [
   },
   {
     id: "clicker",
-    tag: "Clicker",
-    title: "Clicker Game",
+    tag: "Clicker Speed",
+    title: "Clicker Speed",
     desc: "Klik secepat mungkin sebelum waktu habis.",
     meta: "Hitung skor total dalam batas waktu tertentu.",
     image: "/img/game3.png",
