@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Milestone 2 - Dody Roky Immanuel N</title>
+    <link rel="icon" type="image/png" href="/milestone-2-DodyRokyImmanuelN/img/favicon-RFG.png" />
+  <script type="module" crossorigin src="/milestone-2-DodyRokyImmanuelN/assets/index-DfVLf5sA.js"></script>
+  <link rel="stylesheet" crossorigin href="/milestone-2-DodyRokyImmanuelN/assets/index-clmM3xzR.css">
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased">
+
+    <header class="fixed inset-x-0 top-0 z-30 bg-slate-950/80 backdrop-blur border-b border-slate-800">
+        <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+            <!--logo-->
+            <a href="#top" class="flex items-center gap-2">
+                <div class="h-8 w-8 rounded-lg flex items-center justify-center text-xs font-bold ">RFG</div>
+                <span class="text-lg font-semibold tracking-wide">RevoFunGame</span>
+            </a>
+
+            <!--Desktop Menu-->
+            <div class="hidden items-center gap-6 text-sm font-medium md:flex">
+                <!--Dropdown-->
+                <div class="relative group">
+                    <button class="inline-flex items-center gap-1 hover:text-cyan-300 transition-colors" type="button">
+                        Games
+                        <span class="text-xs">▾</span>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div
+                        class="invisible absolute left-0 mt-2 w-40 rounded-lg border border-slate-800 bg-slate-900 py-2 text-sm opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100">
+                        <a href="/games/numberguessing/index.html" class="block px-3 py-1.5 hover:bg-slate-800">Number
+                            Guessing</a>
+                        <a href="/games/rps/index.html" class="block px-3 py-1.5 hover:bg-slate-800">RPS Arena</a>
+                        <a href="/games/clicker/index.html" class="block px-3 py-1.5 hover:bg-slate-800">Clicker
+                            Speed</a>
+                        <a href="#game4" class="block px-3 py-1.5 hover:bg-slate-800">Coming Soon</a>
+                        <a href="#game5" class="block px-3 py-1.5 hover:bg-slate-800">Coming Soon</a>
+
+                    </div>
+                </div>
+                <a href="#about" class="hover:text-cyan-300 transition-colors">About</a>
+                <a href="#news" class="hover:text-cyan-300 transition-colors">News</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button"
+                class="inline-flex items-center justify-center rounded-lg p-2 text-slate-200 hover:bg-slate-800 md:hidden"
+                aria-label="Toggle navigation" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round">
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu (dropdown) -->
+        <div id="mobile-menu"
+            class="md:hidden max-h-0 overflow-hidden transition-[max-height] duration-300 bg-slate-950 border-t border-slate-800">
+            <div class="space-y-1 px-4 pb-4 pt-2 text-sm font-medium">
+                <!-- Dropdown Games di mobile -->
+                <details class="group">
+                    <summary
+                        class="flex cursor-pointer items-center justify-between rounded px-3 py-2 hover:bg-slate-900">
+                        <span>Games</span>
+                        <span class="text-xs group-open:rotate-180 transition-transform">▾</span>
+                    </summary>
+                    <div class="mt-1 space-y-1 pl-4">
+                        <a href="/games/numberguessing/index.html"
+                            class="block rounded px-3 py-1.5 text-xs hover:bg-slate-900">Number Guessing</a>
+                        <a href="/games/rps/index.html" class="block rounded px-3 py-1.5 text-xs hover:bg-slate-900">RPS
+                            Arena</a>
+                        <a href="/games/clicker/index.html"
+                            class="block rounded px-3 py-1.5 text-xs hover:bg-slate-900">Clicker Speed</a>
+                        <a href="#game-4" class="block rounded px-3 py-1.5 text-xs hover:bg-slate-900">Coming Soon</a>
+                        <a href="#game-5" class="block rounded px-3 py-1.5 text-xs hover:bg-slate-900">Coming Soon</a>
+                    </div>
+                </details>
+
+                <a href="#about" class="block rounded px-3 py-2 hover:bg-slate-900">About</a>
+                <a href="#news" class="block rounded px-3 py-2 hover:bg-slate-900">News</a>
+            </div>
+            </nav>
+    </header>
+    <section id="hero" class="relative flex min-h-screen items-center justify-center overflow-hidden bg-black">
+        <!-- Background-->
+        <div class="absolute inset-0 bg-cover bg-center opacity-60" style="background-image: url('/milestone-2-DodyRokyImmanuelN/img/Hero.jpg');">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 mx-auto max-w-4xl px-4 text-center">
+            <h1 id="hero-title" class="text-3xl font-semibold tracking-wide text-slate-50 sm:text-4xl lg:text-5xl">
+                Level Up Your Play with Mini Games
+            </h1>
+
+            <p class="mt-4 text-sm text-slate-200 sm:text-base lg:text-lg">
+                Asah logika, refleks, dan memori lewat koleksi mini game seru: Number Guessing, Rock Paper
+                Scissors, Clicker, Memory Cards, dan Avoid the Falling Objects.
+            </p>
+
+            <div class="mt-24 flex justify-center">
+                <button id="scroll-to-games"
+                    class="flex h-12 w-12 items-center justify-center rounded-full border border-slate-300/70 bg-black/60 text-slate-100 hover:bg-slate-100 hover:text-black transition-colors"
+                    aria-label="Scroll to Games">
+                    <span class="animate-bounce text-2xl leading-none">↓</span>
+
+                </button>
+
+            </div>
+        </div>
+    </section>
+    <!-- Carousel section -->
+    <section id="games" class="games bg-slate-950 border-t border-slate-800 min-h-screen flex items-center">
+        <div class="mx-auto w-full max-w-6xl px-4 py-16">
+            <div class="mb-8 text-center">
+                <h2 class="text-2xl font-bold">Mini Games Collection</h2>
+                <p class="mt-1 text-sm text-slate-300">
+                    Pilih game yang ingin kamu coba.
+                </p>
+            </div>
+
+            <!-- Featured games -->
+            <div id="featured-game"
+                class="relative mb-10 overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/80 p-6 md:p-8 flex flex-col md:flex-row gap-6">
+                <div class="md:w-1/2">
+                    <div class="aspect-video w-full overflow-hidden rounded-2xl bg-slate-800">
+                        <img id="featured-image" src="/img/number-guess.jpg" alt="Preview game"
+                            class="h-full w-full object-cover" />
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 flex flex-col justify-center">
+                    <p id="featured-tag" class="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-400">
+                        Number Guessing
+                    </p>
+                    <h3 id="featured-title" class="mt-3 text-2xl font-semibold">
+                        Number Guessing Game
+                    </h3>
+                    <p id="featured-desc" class="mt-3 text-sm text-slate-300">
+                        Tebak angka rahasia sebelum kesempatanmu habis.
+                    </p>
+                    <p id="featured-meta" class="mt-2 text-xs text-slate-400">
+                        Range angka, jumlah percobaan, dan hint “Too high / Too low”.
+                    </p>
+                    <button id="featured-play"
+                        class="mt-5 inline-flex w-fit items-center justify-center rounded-lg bg-cyan-500 px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-cyan-400">
+                        Mainkan Game
+                    </button>
+                </div>
+            </div>
+
+            <!-- Thumbnail strip  -->
+            <div class="relative">
+                <div id="games-thumbnails" class="mt-2 flex gap-4 overflow-x-auto pb-2 md:overflow-hidden md:pb-0">
+                    <!-- Thumbnail 1: Number Guessing -->
+                    <button
+                        class="group min-w-[160px] flex-1 rounded-2xl border border-slate-800 bg-slate-900/80 p-3 text-left transition-all duration-200 hover:border-cyan-500"
+                        data-game="number-guess">
+                        <div class="aspect-video w-full overflow-hidden rounded-xl bg-slate-800">
+                            <img src="/milestone-2-DodyRokyImmanuelN/img/game1.jpeg" alt="Number Guessing"
+                                class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-200" />
+                        </div>
+                        <p class="mt-2 text-xs font-semibold text-slate-100">
+                            Number Guessing
+                        </p>
+                    </button>
+
+                    <!-- Thumbnail 2: RPS -->
+                    <button
+                        class="group min-w-[160px] flex-1 rounded-2xl border border-slate-800 bg-slate-900/80 p-3 text-left transition-all duration-200 hover:border-cyan-500"
+                        data-game="rps">
+                        <div class="aspect-video w-full overflow-hidden rounded-xl bg-slate-800">
+                            <img src="/milestone-2-DodyRokyImmanuelN/img/game2.png" alt="RPS Arena"
+                                class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-200" />
+                        </div>
+                        <p class="mt-2 text-xs font-semibold text-slate-100">
+                            RPS Arena
+                        </p>
+                    </button>
+
+                    <!-- Thumbnail 3: Clicker -->
+                    <button
+                        class="group min-w-[160px] flex-1 rounded-2xl border border-slate-800 bg-slate-900/80 p-3 text-left transition-all duration-200 hover:border-cyan-500"
+                        data-game="clicker">
+                        <div class="aspect-video w-full overflow-hidden rounded-xl bg-slate-800">
+                            <img src="/milestone-2-DodyRokyImmanuelN/img/game3.png" alt="Clicker Game"
+                                class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-200" />
+                        </div>
+                        <p class="mt-2 text-xs font-semibold text-slate-100">
+                            Clicker Speed
+                        </p>
+                    </button>
+
+                    <!-- Thumbnail 4: Memory -->
+                    <button
+                        class="group min-w-[160px] flex-1 rounded-2xl border border-slate-800 bg-slate-900/80 p-3 text-left transition-all duration-200 hover:border-cyan-500"
+                        data-game="memory">
+                        <div class="aspect-video w-full overflow-hidden rounded-xl bg-slate-800">
+                            <img src="/img/memory.jpg" alt=""
+                                class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-200" />
+                        </div>
+                        <p class="mt-2 text-xs font-semibold text-slate-100">
+                            Coming Soon
+                        </p>
+                    </button>
+
+                    <!-- Thumbnail 5: Avoid -->
+                    <button
+                        class="group min-w-[160px] flex-1 rounded-2xl border border-slate-800 bg-slate-900/80 p-3 text-left transition-all duration-200 hover:border-cyan-500"
+                        data-game="avoid">
+                        <div class="aspect-video w-full overflow-hidden rounded-xl bg-slate-800">
+                            <img src="/img/avoid.jpg" alt=""
+                                class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-200" />
+                        </div>
+                        <p class="mt-2 text-xs font-semibold text-slate-100">
+                            Coming Soon
+                        </p>
+                    </button>
+                </div>
+
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-slate-900 border-t border-slate-800 py-16">
+        <div class="mx-auto max-w-6xl px-4">
+            <div class="max-w-3xl">
+                <h2 class="text-2xl font-bold text-slate-100">Tentang RevoFun</h2>
+                <p class="mt-3 text-slate-300 leading-relaxed">
+                    RevoFun adalah studio game yang berfokus pada mini game berbasis web
+                    yang ringan, cepat dimainkan, dan cocok untuk mengisi waktu luang.
+                </p>
+                <p class="mt-2 text-slate-300 leading-relaxed">
+                    Website ini dibangun sebagai proyek pembelajaran JavaScript, menampilkan
+                    beberapa game sederhana dengan fokus pada interaktivitas dan pengalaman pengguna.
+                </p>
+            </div>
+
+            <div class="mt-12 space-y-12">
+                <!-- Card 1: Gambar kiri, teks kanan -->
+                <div class="flex flex-col md:flex-row gap-6 items-center">
+                    <div class="md:w-1/2">
+                        <img src="/milestone-2-DodyRokyImmanuelN/img/Gambar-Misi.jpg" alt="Misi RevoFun" class="rounded-lg w-full h-auto" />
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-lg font-semibold text-slate-100">Misi</h3>
+                        <p class="mt-2 text-slate-300">
+                            Membuat game kecil yang seru sekaligus menjadi sarana belajar logika dan
+                            pemrograman.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Gambar kanan, teks kiri -->
+                <div class="flex flex-col md:flex-row-reverse gap-6 items-center">
+                    <div class="md:w-1/2">
+                        <img src="/milestone-2-DodyRokyImmanuelN/img/Gambar-Teknologi.jpg" alt="Teknologi RevoFun" class="rounded-lg w-full h-auto" />
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-lg font-semibold text-slate-100">Teknologi</h3>
+                        <p class="mt-2 text-slate-300">
+                            Dibangun dengan HTML, Tailwind CSS, dan JavaScript/TypeScript untuk
+                            mengelola interaksi dan game logic.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Gambar kiri, teks kanan -->
+                <div class="flex flex-col md:flex-row gap-6 items-center">
+                    <div class="md:w-1/2">
+                        <img src="/milestone-2-DodyRokyImmanuelN/img/Gambar-Fokus-Belajar.jpg" alt="Fokus Belajar RevoFun"
+                            class="rounded-lg w-full h-auto" />
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-lg font-semibold text-slate-100">Fokus Belajar</h3>
+                        <p class="mt-2 text-slate-300">
+                            Melatih DOM manipulation, event handling, dan problem solving lewat
+                            implementasi beberapa mini game.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section-->
+    <section id="news" class="bg-slate-900 border-t border-slate-800 py-16">
+        <div class="mx-auto max-w-6xl px-4">
+            <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-100">News & Updates</h2>
+                    <p class="mt-2 text-slate-300 leading-relaxed">
+                        Ikuti perkembangan terbaru mini game dan fitur yang sedang dikembangkan.
+                    </p>
+                </div>
+                <span class="text-xs rounded-full border border-slate-700 px-3 py-1 text-slate-400 bg-slate-800">
+                    Status: Active Development
+                </span>
+            </div>
+
+            <div class="mt-8 space-y-6">
+                <article class="rounded-lg border border-slate-800 bg-slate-800/60 p-6">
+                    <p class="text-xs font-semibold text-slate-400">17 Des 2025</p>
+                    <h3 class="mt-2 text-lg font-semibold text-slate-100">Number Guessing Game Telah Diluncurkan</h3>
+                    <p class="mt-2 text-slate-300">
+                        Mini game pertama sudah bisa dimainkan. Fitur penilaian dan feedback sudah ditambahkan.
+                    </p>
+                </article>
+
+                <article class="rounded-lg border border-slate-800 bg-slate-800/60 p-6">
+                    <p class="text-xs font-semibold text-slate-400">17 Des 2025</p>
+                    <h3 class="mt-2 text-lg font-semibold text-slate-100">Rock, Paper, Scissors Siap Dimainkan</h3>
+                    <p class="mt-2 text-slate-300">
+                        Game kedua sudah selesai dan tersedia di halaman game. Skor sederhana juga sudah
+                        diimplementasikan.
+                    </p>
+                </article>
+
+                <article class="rounded-lg border border-slate-800 bg-slate-800/60 p-6">
+                    <p class="text-xs font-semibold text-slate-400">17 Des 2025</p>
+                    <h3 class="mt-2 text-lg font-semibold text-slate-100">Avoid Game Dalam Pengembangan</h3>
+                    <p class="mt-2 text-slate-300">
+                        Mini game avoid sedang dalam proses pengembangan. Akan diluncurkan dalam beberapa hari ke
+                        depan.
+                    </p>
+                </article>
+
+                <article class="rounded-lg border border-slate-800 bg-slate-800/60 p-6">
+                    <p class="text-xs font-semibold text-slate-400">18 Des 2025</p>
+                    <h3 class="mt-2 text-lg font-semibold text-slate-100">Leaderboard & Nickname Dalam Rencana</h3>
+                    <p class="mt-2 text-slate-300">
+                        Fitur penyimpanan skor tertinggi dan input nickname akan ditambahkan setelah semua game utama
+                        selesai.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+</body>
