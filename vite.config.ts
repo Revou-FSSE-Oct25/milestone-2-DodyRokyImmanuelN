@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/",
+  base: "/milestone-2-DodyRokyImmanuelN",
 });
