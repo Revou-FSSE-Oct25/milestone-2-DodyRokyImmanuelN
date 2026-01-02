@@ -63,9 +63,11 @@ RevoFun/
 
 ```
 
-## 🚀 Cara Penggunaan
+## 🚀 Cara Penggunaan 
 
 ```bash
 npm install
 npm run dev
 ```
+
+🔗 **Live Demo**: [https://nama-site-kamu.netlify.app](https://grand-belekoy-325453.netlify.app/)
