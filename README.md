@@ -70,4 +70,4 @@ npm install
 npm run dev
 ```
 
-🔗 **Live Demo**: [https://nama-site-kamu.netlify.app](https://grand-belekoy-325453.netlify.app/)
+🔗 **Live Demo**: [RevoFunGame](https://grand-belekoy-325453.netlify.app/)
